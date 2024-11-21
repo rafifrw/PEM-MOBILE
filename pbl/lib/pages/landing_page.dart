@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class LandingPage extends StatefulWidget {
+class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF0D1B2A), // Dark blue background
+      backgroundColor: Color(0xFF051C3D), // Dark blue background
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -13,9 +13,8 @@ class LandingPage extends StatefulWidget {
           Container(
             width: double.infinity,
             padding: EdgeInsets.symmetric(vertical: 20, horizontal: 24),
-            color: Color(0xFF0D1B2A), // Dark blue header
+            color: Color(0xFF051C3D),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.start, // Align to the left
               children: [
                 Image.asset(
                   'assets/images/logo_polinema.png', // Path to logo
@@ -26,6 +25,7 @@ class LandingPage extends StatefulWidget {
                   'POLITEKNIK NEGERI MALANG',
                   style: TextStyle(
                     fontSize: 12,
+                    fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
                 ),
@@ -37,7 +37,7 @@ class LandingPage extends StatefulWidget {
               padding: EdgeInsets.symmetric(horizontal: 24),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start, // Align left
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     'POLINEMA',
@@ -45,7 +45,7 @@ class LandingPage extends StatefulWidget {
                       fontSize: 40,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
-                      height: 1.2, // Mengurangi jarak antar baris
+                      height: 1.2,
                     ),
                   ),
                   Text(
@@ -53,8 +53,8 @@ class LandingPage extends StatefulWidget {
                     style: TextStyle(
                       fontSize: 40,
                       fontWeight: FontWeight.bold,
-                      color: Color(0xFFF4D35E), // Warna kuning
-                      height: 1.2, // Mengurangi jarak antar baris
+                      color: Color(0xFFF4D35E),
+                      height: 1.2,
                     ),
                   ),
                   Text(
@@ -62,8 +62,8 @@ class LandingPage extends StatefulWidget {
                     style: TextStyle(
                       fontSize: 40,
                       fontWeight: FontWeight.bold,
-                      color: Color(0xFFF4D35E), // Warna kuning
-                      height: 1.2, // Mengurangi jarak antar baris
+                      color: Color(0xFFF4D35E),
+                      height: 1.2,
                     ),
                   ),
                   Text(
@@ -71,21 +71,20 @@ class LandingPage extends StatefulWidget {
                     style: TextStyle(
                       fontSize: 40,
                       fontWeight: FontWeight.bold,
-                      color: Color(0xFFF4D35E), // Warna kuning
-                      height: 1.2, // Mengurangi jarak antar baris
+                      color: Color(0xFFF4D35E),
+                      height: 1.2,
                     ),
                   ),
-
                   SizedBox(height: 40),
                   Center(
                     child: ElevatedButton(
                       onPressed: () {
-                        // Action for the button
+                        Navigator.pushNamed(context, '/login'); // Navigasi ke halaman login
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Color(0xFFF4D35E), // Yellow button
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 180, vertical: 15),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 180, vertical: 15),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
                         ),
