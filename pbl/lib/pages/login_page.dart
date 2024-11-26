@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 class LoginPage extends StatelessWidget {
   // Data pengguna (array sederhana)
   final List<Map<String, String>> users = [
-    {'username': 'admin', 'password': 'admin123'},
     {'username': 'dosen', 'password': 'dosen123'},
   ];
 

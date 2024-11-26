@@ -73,7 +73,7 @@ class DosenHome extends StatelessWidget {
                     ),
                     IconButton(
                       onPressed: () {
-                        // Tambahkan logika notifikasi
+                        Navigator.pushNamed(context, '/notif');
                       },
                       icon: Icon(
                         Icons.notifications_none,
@@ -85,14 +85,292 @@ class DosenHome extends StatelessWidget {
               ],
             ),
           ),
-          // Expanded content
+          // Content
           Expanded(
-            child: Container(
-              color: Color(0xFFECECEC), // Background for content
-              child: Center(
-                child: Text(
-                  '', // Konten kosong
-                  style: TextStyle(color: Colors.black38),
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // Tabel Pelatihan dan Sertifikasi
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(8),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black12,
+                            blurRadius: 4,
+                            offset: Offset(0, 2),
+                          ),
+                        ],
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          // Judul Tabel
+                          Padding(
+                            padding: const EdgeInsets.all(16.0),
+                            child: Text(
+                              'Pelatihan Dan Sertifikasi Yang Anda Dapatkan',
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                          // Tabel
+                          SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: DataTable(
+                              columnSpacing: 76.0, // Jarak antar kolom
+                              headingRowColor:
+                                  MaterialStateProperty.all(Color(0xFF051C3D)),
+                              dataRowColor:
+                                  MaterialStateProperty.all(Color(0xFFF5F5F5)),
+                              border: TableBorder(
+                                horizontalInside: BorderSide(
+                                  width: 1,
+                                  color: Colors.grey.shade300,
+                                ),
+                              ),
+                              columns: const [
+                                DataColumn(
+                                  label: Expanded(
+                                    child: Text(
+                                      'No.',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                DataColumn(
+                                  label: Expanded(
+                                    child: Text(
+                                      'Periode',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                DataColumn(
+                                  label: Expanded(
+                                    child: Text(
+                                      'Total Sertifikasi',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                              rows: const [
+                                DataRow(cells: [
+                                  DataCell(Text(
+                                    '1',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                  )),
+                                  DataCell(Text('2020')),
+                                  DataCell(Text('2')),
+                                ]),
+                                DataRow(cells: [
+                                  DataCell(Text(
+                                    '2',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                  )),
+                                  DataCell(Text('2021')),
+                                  DataCell(Text('0')),
+                                ]),
+                                DataRow(cells: [
+                                  DataCell(Text(
+                                    '3',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                  )),
+                                  DataCell(Text('2023')),
+                                  DataCell(Text('1')),
+                                ]),
+                                DataRow(cells: [
+                                  DataCell(Text(
+                                    '4',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                  )),
+                                  DataCell(Text('2024')),
+                                  DataCell(Text('1')),
+                                ]),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    // Jarak antara tabel dan Card pertama
+                    SizedBox(height: 16),
+                    // Card Data Pelatihan dan Sertifikasi
+                    Card(
+                      color: Colors
+                          .white, // Menentukan warna background card menjadi putih
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      elevation: 2,
+                      margin: EdgeInsets.symmetric(horizontal: 4),
+                      child: Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            // Judul
+                            Text(
+                              'Data Pelatihan dan Sertifikasi',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                              ),
+                            ),
+                            SizedBox(height: 8),
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                // Ikon di kiri
+                                Icon(
+                                  Icons.folder,
+                                  size: 48,
+                                  color: Color(0xFF051C3D),
+                                ),
+                                SizedBox(
+                                    width: 16), // Jarak antara ikon dan teks
+                                // Teks deskripsi
+                                Expanded(
+                                  child: Text(
+                                    'Lihat data pelatihan dan sertifikasi yang telah anda didapatkan',
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      color: Colors.black54,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                                height:
+                                    16), // Jarak antara teks dan "READ MORE"
+                            // READ MORE di kanan bawah
+                            Align(
+                              alignment: Alignment.centerRight,
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    'READ MORE',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: Color(0xFF051C3D),
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  SizedBox(width: 4),
+                                  Icon(
+                                    Icons.arrow_forward_ios,
+                                    size: 14,
+                                    color: Colors.black,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    // Jarak antara Card pertama dan kedua
+                    SizedBox(height: 16),
+                    // Card Daftar Pelatihan dan Sertifikasi
+                    Card(
+                      color: Colors
+                          .white, // Menentukan warna background card menjadi putih
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      elevation: 2,
+                      margin: EdgeInsets.symmetric(horizontal: 4),
+                      child: Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            // Judul
+                            Text(
+                              'Daftar Pelatihan dan Sertifikasi',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                              ),
+                            ),
+                            SizedBox(height: 8),
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                // Ikon di kiri
+                                Icon(
+                                  Icons.list_alt,
+                                  size: 48,
+                                  color: Color(0xFF051C3D),
+                                ),
+                                SizedBox(
+                                    width: 16), // Jarak antara ikon dan teks
+                                // Teks deskripsi
+                                Expanded(
+                                  child: Text(
+                                    'Lihat daftar pelatihan dan sertifikasi yang tersedia',
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      color: Colors.black54,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                                height:
+                                    16), // Jarak antara teks dan "READ MORE"
+                            // READ MORE di kanan bawah
+                            Align(
+                              alignment: Alignment.centerRight,
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    'READ MORE',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: Color(0xFF051C3D),
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  SizedBox(width: 4),
+                                  Icon(
+                                    Icons.arrow_forward_ios,
+                                    size: 14,
+                                    color: Colors.black,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -145,5 +423,3 @@ class DosenHome extends StatelessWidget {
     );
   }
 }
-
-// Halaman Profile
