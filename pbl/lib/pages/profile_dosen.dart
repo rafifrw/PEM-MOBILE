@@ -11,7 +11,7 @@ class ProfileDosen extends StatelessWidget {
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
-            Navigator.pushNamed(context, '/');
+            Navigator.pushNamed(context, '/dosen_home');
           },
         ),
       ),
