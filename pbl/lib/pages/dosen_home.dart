@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:pbl/pages/data_serpel.dart';
+import 'package:pbl/pages/info_serpel.dart';
 import 'package:pbl/pages/profile_dosen.dart';
+import 'package:pbl/pages/surat_tugas.dart'; // Import halaman SuratTugasPage
 
 class DosenHome extends StatelessWidget {
   @override
@@ -271,12 +274,22 @@ class DosenHome extends StatelessWidget {
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
-                                  Text(
-                                    'READ MORE',
-                                    style: TextStyle(
-                                      fontSize: 12,
-                                      color: Color(0xFF051C3D),
-                                      fontWeight: FontWeight.bold,
+                                  GestureDetector(
+                                    onTap: () {
+                                      // Navigasi ke halaman yang diinginkan saat "READ MORE" diklik
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => DataSerpel()),
+                                      );
+                                    },
+                                    child: Text(
+                                      'READ MORE',
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        color: Color(0xFF051C3D),
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
                                   ),
                                   SizedBox(width: 4),
@@ -287,7 +300,7 @@ class DosenHome extends StatelessWidget {
                                   ),
                                 ],
                               ),
-                            ),
+                            )
                           ],
                         ),
                       ),
@@ -349,12 +362,22 @@ class DosenHome extends StatelessWidget {
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
-                                  Text(
-                                    'READ MORE',
-                                    style: TextStyle(
-                                      fontSize: 12,
-                                      color: Color(0xFF051C3D),
-                                      fontWeight: FontWeight.bold,
+                                  GestureDetector(
+                                    onTap: () {
+                                      // Navigasi ke halaman yang diinginkan saat "READ MORE" diklik
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => InfoSerpel()),
+                                      );
+                                    },
+                                    child: Text(
+                                      'READ MORE',
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        color: Color(0xFF051C3D),
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
                                   ),
                                   SizedBox(width: 4),
@@ -365,7 +388,7 @@ class DosenHome extends StatelessWidget {
                                   ),
                                 ],
                               ),
-                            ),
+                            )
                           ],
                         ),
                       ),
@@ -411,7 +434,31 @@ class DosenHome extends StatelessWidget {
         ],
         currentIndex: 0, // Indeks menu aktif
         onTap: (index) {
-          if (index == 4) {
+          if (index == 0) {
+            // Navigasi ke halaman Surat Tugas
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => DosenHome()),
+            );
+          } else if (index == 1) {
+            // Navigasi ke halaman profile
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => InfoSerpel()),
+            );
+          } else if (index == 2) {
+            // Navigasi ke halaman profile
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => SuratTugas()),
+            );
+          } else if (index == 3) {
+            // Navigasi ke halaman profile
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => DataSerpel()),
+            );
+          } else if (index == 4) {
             // Navigasi ke halaman profile
             Navigator.push(
               context,

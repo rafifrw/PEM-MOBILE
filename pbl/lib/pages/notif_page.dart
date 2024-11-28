@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:pbl/pages/data_serpel.dart';
+import 'package:pbl/pages/dosen_home.dart';
+import 'package:pbl/pages/info_serpel.dart';
+import 'package:pbl/pages/profile_dosen.dart';
+import 'package:pbl/pages/surat_tugas.dart';
 
 class NotifikasiPage extends StatelessWidget {
   @override
@@ -129,8 +134,37 @@ class NotifikasiPage extends StatelessWidget {
         unselectedFontSize: 12, // Ukuran font untuk item yang tidak dipilih
         currentIndex: 1, // Menu aktif untuk halaman ini
         onTap: (index) {
-          // Navigasi sesuai index
-          // Tambahkan logic navigasi halaman
+if (index == 0) {
+            // Navigasi ke halaman Surat Tugas
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => DosenHome()),
+            );
+          } else if (index == 1) {
+            // Navigasi ke halaman profile
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => InfoSerpel()),
+            );
+          } else if (index == 2) {
+            // Navigasi ke halaman profile
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => SuratTugas()),
+            );
+          } else if (index == 3) {
+            // Navigasi ke halaman profile
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => DataSerpel()),
+            );
+          }else if (index == 4) {
+            // Navigasi ke halaman profile
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ProfileDosen()),
+            );
+          }
         },
       ),
     );
